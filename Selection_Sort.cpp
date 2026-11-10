@@ -1,21 +1,7 @@
-
 #include <iostream>
 using namespace std;
 
-int main() {
-    int n;
-    int a[100];
-
-    cout << "Nhap so phan tu: ";
-    cin >> n;
-
-    // Nhap mang
-    for (int i = 0; i < n; i++) {
-        cout << "a[" << i << "] = ";
-        cin >> a[i];
-    }
-
-    // Thuat toan Selection Sort
+void selectionSort(int a[], int n) {
     for (int i = 0; i < n - 1; i++) {
         int min = i;
 
@@ -30,6 +16,23 @@ int main() {
         a[i] = a[min];
         a[min] = temp;
     }
+}
+
+int main() {
+    int n;
+    int a[100];
+
+    cout << "Nhap so phan tu: ";
+    cin >> n;
+
+    // Nhap mang
+    for (int i = 0; i < n; i++) {
+        cout << "a[" << i << "] = ";
+        cin >> a[i];
+    }
+
+    // Goi ham sap xep
+    selectionSort(a, n);
 
     // Xuat mang sau khi sap xep
     cout << "Mang sau khi sap xep: ";
